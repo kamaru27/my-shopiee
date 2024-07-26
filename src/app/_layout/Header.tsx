@@ -36,12 +36,12 @@ const Header = () => {
         <div className="flex ">
           <div className="hidden sm:flex items-center gap-[45px] mr-11">
             {header.map((item, index) => (
-              <Link className="" href={item.Link}>
+              <Link key={index} className="" href={item.Link}>
                 {item.name}
               </Link>
             ))}
           </div>
-          <div className="relative p-[10px] ">
+          <div className="relative p-[10px]">
             <div className="rounded-full bg-globalblue size-5 text-white flex justify-center items-center absolute top-0 right-0 text-[14px]">
               0
             </div>
