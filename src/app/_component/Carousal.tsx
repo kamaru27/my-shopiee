@@ -39,52 +39,47 @@ const Carousal = () => {
   const [slide, setSlide] = useState(0);
 
   function buttonClickAdd() {
-    if (slide == Data.length-1) {
-
-      
+    if (slide == Data.length - 1) {
       setSlide(0);
     } else {
-      setSlide(slide+1);
-
+      setSlide(slide + 1);
     }
-  }  function buttonClickMin() {
+  }
+  function buttonClickMin() {
     if (slide == 0) {
-       
-      
-      setSlide(Data.length-1);
+      setSlide(Data.length - 1);
     } else {
-      setSlide(slide-1);
-
+      setSlide(slide - 1);
     }
   }
   return (
     <>
-      <div className="w-full h-[25rem] relative">
+      <div className="w-full h-[35rem] relative">
         <Image
           className="object-cover"
           src={Data.at(slide)!.image}
           fill
           alt="Shoping_Page "
         />
-        <div className="absolute top-40 left-24">
+        <div className="absolute top-[45%] sm:left-24 left-[10%] flex-col sm:block">
           <p className="text-global-font-text3 text-white ">
             {Data.at(slide)!.text.subHeading}
           </p>
-          <p className="text-global-font-h1 text-white ">
+          <p className="sm:text-global-font-h1 text-global-font-h3 text-white">
             {Data.at(slide)!.text.heading}
           </p>
-          <p className="text-global-font-text1 text-white ">
+          <p className="sm:text-global-font-text1 text-[10px] text-white truncate overflow-hidden">
             {Data.at(slide)!.text.discreption}
           </p>
         </div>
         <button
-          className="border-none absolute text-white top-[200px] right-4 hover:text-2xl"
-          onClick={buttonClickAdd }
+          className="border-none absolute text-white top-[50%] right-4 hover:text-2xl"
+          onClick={buttonClickAdd}
         >
           {">"}
         </button>
         <button
-          className="border-none absolute text-white top-[200px] left-4 hover:text-2xl"
+          className="border-none absolute text-white top-[50%] left-4 hover:text-2xl"
           onClick={buttonClickMin}
         >
           {"<"}

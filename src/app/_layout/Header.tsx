@@ -1,15 +1,15 @@
 "use client";
 import Link from "next/link";
 import React, { useState } from "react";
-import SvgComponent from "../_svg/Svg";
-import Svg2 from "../_svg/Svg2";
+import SvgComponent from "../../svg/Svg";
+import Svg2 from "../../svg/Svg2";
 import SideBar from "./SideBar";
 
 const header = [
   { name: "Home", Link: "/" },
-  { name: "Shop", Link: "/Shop" },
-  { name: "Contact", Link: "/Contact" },
-  { name: "Login", Link: "/Login" },
+  { name: "Shop", Link: "/shop" },
+  { name: "Contact", Link: "/contact" },
+  { name: "Login", Link: "/login" },
 ];
 
 const Header = () => {
@@ -25,34 +25,33 @@ const Header = () => {
   };
   return (
     <>
-          {menu == true ? <SideBar /> : ""}
+      {menu == true ? <SideBar /> : ""}
 
       <div
         className="bg-white h-20 flex items-center justify-between
-       pl-14 text-globalblue text-global-font-h5"
+       pl-14 text-globalblue text-global-font-h5 font-medium"
       >
-        My-Shopiee
-        
-        <div className="flex ">
-          <div className="hidden sm:flex items-center gap-[45px] mr-11">
+        <p className="font-semibold">My-Shopiee</p>
+
+        <div className="flex mr-7 pr-3">
+          <div className="hidden sm:flex items-center gap-[43px] pr-3">
             {header.map((item, index) => (
               <Link key={index} className="" href={item.Link}>
                 {item.name}
               </Link>
             ))}
           </div>
-          <div className="relative p-[10px]">
-            <div className="rounded-full bg-globalblue size-5 text-white flex justify-center items-center absolute top-0 right-0 text-[14px]">
+          <div className="relative p-[10px] mr-[7%] pr-[6px] pt-[5px] mt-[10px]">
+            <div className="rounded-full bg-globalblue size-4 text-white flex justify-center items-center absolute top-0 right-0 text-[14px]">
               0
             </div>
             <Link href={"/Cart"}>
-              <SvgComponent className="size-10" />
+              <SvgComponent className="size-8" />
             </Link>
           </div>
         </div>
-        
+
         <Svg2 className="size-7 mr-5 sm:hidden " onClick={() => click()} />
-        
       </div>
     </>
   );

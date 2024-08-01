@@ -1,13 +1,13 @@
 import Link from "next/link";
 import React from "react";
-import WhatsappIcon from "../_svg/Whatsapp";
-import InstagramIcon from "../_svg/Instagram";
-import FacebookIcon from "../_svg/Facebook";
+import WhatsappIcon from "../../svg/Whatsapp";
+import InstagramIcon from "../../svg/Instagram";
+import FacebookIcon from "../../svg/Facebook";
 
 const footer = [
-  { name: "Login", Link: "/Login" },
-  { name: "Contact", Link: "/Contact" },
-  { name: "Shop", Link: "/Shop" },
+  { name: "Login", Link: "/login" },
+  { name: "Contact", Link: "/contact" },
+  { name: "Shop", Link: "/shop" },
 ];
 
 const Footer = () => {
