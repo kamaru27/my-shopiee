@@ -12,16 +12,16 @@ const mySchema = z.object({
   password: string().min(8, { message: "Password min 8 is required." }),
 });
 
-type TMySchema=z.infer<typeof mySchema>
+type TMySchema = z.infer<typeof mySchema>;
 
 const page = () => {
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm<TMySchema>({resolver:zodResolver(mySchema)});
+  } = useForm<TMySchema>({ resolver: zodResolver(mySchema) });
   const submitData = () => {};
-  
+
   return (
     <>
       <div className="w-full h-[100vh] relative flex justify-center items-center">
@@ -57,6 +57,7 @@ const page = () => {
                 <p className="text-red-600">{errors.password.message}</p>
               )}
               <button
+                disabled={isSubmitting}
                 type="submit"
                 className="bg-globalblue mt-[20px] px-[105px] h-[40px] rounded-[10px]"
               >

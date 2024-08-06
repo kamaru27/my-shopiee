@@ -5,7 +5,7 @@ import Kids from "@public/Image/kids.jpg";
 import Men from "../../../public/Image/men.jpg";
 import Accessories from "@public/Image/fassion.jpg";
 
-import CatagoryCard from "./CatagoryCard";
+import CatagoryCard from "./CategoryCard";
 
 const Catagories = () => {
   return (
