@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import SvgComponent from "../../svg/Svg";
 import Svg2 from "../../svg/Svg2";
 import SideBar from "./SideBar";
+import Provider from "./Provider";
 
 const header = [
   { name: "Home", Link: "/" },
@@ -33,7 +34,7 @@ const Header = () => {
       >
         <p className="font-semibold">My-Shopiee</p>
 
-        <div className="flex mr-7 pr-3">
+        <div className="flex sm:mr-7 pr-3">
           <div className="hidden sm:flex items-center gap-[43px] pr-3">
             {header.map((item, index) => (
               <Link key={index} className="" href={item.Link}>
@@ -41,17 +42,18 @@ const Header = () => {
               </Link>
             ))}
           </div>
-          <div className="relative p-[10px] mr-[7%] pr-[6px] pt-[5px] mt-[10px]">
+          <div className="relative p-[10px] mr-7 pr-[6px] pt-[5px] mt-[10px] ">
             <div className="rounded-full bg-globalblue size-4 text-white flex justify-center items-center absolute top-0 right-0 text-[14px]">
-              0
+              <Provider>
+                <></>
+              </Provider>
             </div>
-            <Link href={"/Cart"}>
+            <Link href={"/cart"}>
               <SvgComponent className="size-8" />
             </Link>
           </div>
+          <Svg2 className="size-7 mr-5 sm:hidden relative pt-[5px] mt-[12px] " onClick={() => click()} />
         </div>
-
-        <Svg2 className="size-7 mr-5 sm:hidden " onClick={() => click()} />
       </div>
     </>
   );
