@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import SvgComponent from "../../svg/Svg";
 import Svg2 from "../../svg/Svg2";
 import SideBar from "./SideBar";
-import Provider from "./Provider";
+
 
 const header = [
   { name: "Home", Link: "/" },
@@ -44,9 +44,7 @@ const Header = () => {
           </div>
           <div className="relative p-[10px] mr-7 pr-[6px] pt-[5px] mt-[10px] ">
             <div className="rounded-full bg-globalblue size-4 text-white flex justify-center items-center absolute top-0 right-0 text-[14px]">
-              <Provider>
-                <></>
-              </Provider>
+             0
             </div>
             <Link href={"/cart"}>
               <SvgComponent className="size-8" />

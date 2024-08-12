@@ -14,7 +14,7 @@ const mySchema = z.object({
 
 type TMySchema = z.infer<typeof mySchema>;
 
-const page = () => {
+const LoginPage = () => {
   const {
     register,
     handleSubmit,
@@ -65,7 +65,7 @@ const page = () => {
               </button>
             </div>
 
-            <p className="mt-[10px] sm:text-base text-xs">Don't have an account?</p>
+            <p className="mt-[10px] sm:text-base text-xs">Don&apos;t have an account?</p>
             <Link href={"/sign-up"} className="sm:text-base text-xs">Sign Up</Link>
           </form>
         </div>
@@ -74,4 +74,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default LoginPage;

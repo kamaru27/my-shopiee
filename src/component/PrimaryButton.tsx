@@ -1,18 +1,20 @@
 import React from "react";
 
 type TProps = {
-  text: string;
+  text?: string;
   className?:string
+  type?:"submit" | "reset" | "button";
+  onClick?:React.MouseEventHandler<HTMLButtonElement>
 };
 
-const Button = (props: TProps) => {
+const PrimaryButton = (props: TProps) => {
   return (
     <>
-      <button className="bg-globalblue  mt-[20px] px-[105px] h-[40px] rounded-[10px] text-white">
+      <button className={props.className} type={props.type} onClick={props.onClick}>
         {props.text}
       </button>
     </>
   );
 };
 
-export default Button;
+export default PrimaryButton;

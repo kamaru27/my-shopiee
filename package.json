@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@headlessui/react": "^2.1.2",
     "@hookform/resolvers": "^3.9.0",
     "@mrvautin/react-shoppingcart": "^1.0.4",
     "@svgr/webpack": "^8.1.0",

@@ -1,8 +1,8 @@
 import React from "react";
-import Product from "@public/Image/product.jpg";
 import Image from "next/image";
 import Link from "next/link";
-import { StaticImport } from "next/dist/shared/lib/get-img-props";
+// import Product from "@public/Image/product.jpg";
+// import { StaticImport } from "next/dist/shared/lib/get-img-props";
 
 // const Data = [
 //   {
@@ -50,11 +50,11 @@ const page = async ({ params }: { params: { products: string } }) => {
         {Data.products.map(
           (
             item:any,
-            i: React.Key | null | undefined
+            i:number
           ) => (
-            <div className="h-full">
+            <div className="h-full" key={i}>
               <Link
-                key={i}
+                
                 href={"/shop/"+params.products+ '/'+ item.id}
                 className="h-full block"
               >

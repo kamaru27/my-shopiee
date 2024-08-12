@@ -23,7 +23,7 @@ const page = () => {
           </div>
           
 
-          <p>Don't have an account?</p>
+          <p>Don&apos;t have an account?</p>
           <Link href={"/sign-up"}>Sign Up</Link>
         </form>
       </div>

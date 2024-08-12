@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import Women from "@public/Image/women.jpg";
 import Kids from "@public/Image/kids.jpg";
@@ -6,7 +5,7 @@ import Men from "../../../public/Image/men.jpg";
 import Accessories from "@public/Image/fassion.jpg";
 import Card from "../_component/Card";
 
-const page = async () => {
+const page =  async () => {
   const dummy = await fetch("https://dummyjson.com/products/categories");
   const fullData = await dummy.json();
 
@@ -25,9 +24,9 @@ const page = async () => {
         <Card image={Accessories} text="Accessories" />
 
         {fullData.map((item: { name: string;},i: any)=>(
-          <>
-          <Card  text={item.name}/>
-          </>
+          
+          <Card  text={item.name} key={i}/>
+      
         ))}
       </div>
     </>

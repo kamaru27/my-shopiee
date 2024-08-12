@@ -1,54 +1,42 @@
 import React from "react";
-import Image from "next/image";
-import ProductImage from "@public/Image/product.jpg";
+import CartItems from "../_component/CartItems";
+import Link from "next/link";
 
-const page = () => {
+const cartPage = () => {
   return (
     <div className="grid grid-cols-3">
-      <table className="table-auto col-span-2">
-        <thead className="bg-gray-500">
+      <table className="col-span-2">
+        <thead className="bg-gray-500 h-[40px]">
           <tr>
             <th>Products</th>
             <th>Price</th>
             <th>Quantity</th>
             <th>Subtotal</th>
-            <th>{''}</th>
+            <th></th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td className="flex justify-center">
-              <div className="flex items-center">
-                <Image src={ProductImage} alt="" className="size-20"></Image>
-                <p>Product</p>
-              </div>
-            </td>
-            <td className="text-center">100</td>
-            <td>
-              <div className="flex justify-center gap-1 text-center items-center">
-                <button>-</button>
-                <div className="size-6 border border-solid text-sm">
-                  1
-                </div>
-                <button>+</button>
-              </div>
-            </td>
-            <td className="text-center">
-                100
-            </td>
-            <td>
-                <button className="border-[0px] text-xs text-globalblue text-center hover:text-black">Remove</button>
-            </td>
-          </tr>
+          <CartItems />
         </tbody>
       </table>
       <div className="col-span-1">
         <p className="text-center text-3xl font-black border border-solid ">
-          Card Total
+          Cart Total
         </p>
+        <div className="flex justify-evenly my-4">
+          <p className="">Shipping</p>
+          <p className="">20</p>
+        </div>
+        <div className="flex justify-evenly my-4">
+          <p className="">Total</p>
+          <p className="">120</p>
+        </div>
+        <div className="flex justify-center">
+          <Link href={'/checkout'}><button className=" bg-white  mt-[20px] px-[50px] h-[40px] rounded-[10px]  text-globalblue hover:bg-globalblue hover:text-white" >Check Out</button></Link>
+        </div>
       </div>
     </div>
   );
 };
 
-export default page;
+export default cartPage;

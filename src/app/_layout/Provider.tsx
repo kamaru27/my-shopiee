@@ -1,4 +1,4 @@
-"Use Client";
+"use client";
 import React, { ReactNode } from "react";
 import { CartProvider } from "@mrvautin/react-shoppingcart";
 

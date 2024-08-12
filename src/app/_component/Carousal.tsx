@@ -11,7 +11,7 @@ const Data = [
     text: {
       subHeading: "SUMMER 2020",
       heading: "30% Discount",
-      discreption:
+      description:
         "We know how large objects will act,but things on a small scale",
     },
   },
@@ -20,7 +20,7 @@ const Data = [
     text: {
       subHeading: "SUMMER 2020",
       heading: "NEW COLLECTION",
-      discreption:
+      description:
         "We know how large objects will act,but things on a small scale",
     },
   },
@@ -29,7 +29,7 @@ const Data = [
     text: {
       subHeading: "SUMMER 2020",
       heading: "EXPLORE",
-      discreption:
+      description:
         "We know how large objects will act,but things on a small scale",
     },
   },
@@ -69,7 +69,7 @@ const Carousal = () => {
             {Data.at(slide)!.text.heading}
           </p>
           <p className="sm:text-global-font-text1 text-[10px] text-white truncate overflow-hidden">
-            {Data.at(slide)!.text.discreption}
+            {Data.at(slide)!.text.description}
           </p>
         </div>
         <button
