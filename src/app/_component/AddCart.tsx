@@ -2,17 +2,17 @@
 import PrimaryButton from '@/component/PrimaryButton'
 import React from 'react'
 import { useCart } from "@mrvautin/react-shoppingcart";
-type TData={
-    name:string,
-    id:string,
-    price:number,
-    image:string
-    description:string,
-    brand:string
-}
+// type TData={
+//     name:string,
+//     _id:string,
+//     price:number,
+//     image:string
+//     description:string,
+//     brand:any
+// }
 
 type Props={
-    Data:TData
+    Data:any
 }
 
 const AddCart = (props:Props) => {
@@ -30,7 +30,7 @@ const AddCart = (props:Props) => {
               type="submit"
               onClick={() =>
                 addItem({
-                  id: props.Data.id,
+                  id: props.Data._id,
                   name: props.Data.name,
                   price: props.Data.price,
                   image: props.Data.image

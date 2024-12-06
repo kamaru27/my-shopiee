@@ -2,6 +2,7 @@ import React from "react";
 import Product from "@public/Image/product.jpg";
 import ProductCard from "./ProductCard";
 import Image from "next/image";
+import { storageUrl } from "@/utils/baseUrl";
 
 const Data = [
   {
@@ -36,23 +37,32 @@ const Data = [
   },
 ];
 
-const Products = () => {
+type TProps = {
+  productList: any;
+};
+
+const Products = ({ productList }: TProps) => {
+  // console.log("storageUrl:::", storageUrl);
   return (
     <>
       <p className="text-center text-3xl font-extrabold mt-80 mb-20">
         Products
       </p>
-      <div className="grid grid-cols-4 gap-2">
+      <div className={productList.length>3?'grid grid-cols-4 gap-2 ':"grid grid-cols-2 gap-2 "}>
         {
-          Data.map((item, i) => (
+          productList.map((item: any, i: any) => (
             <div key={i}>
-              <Image src={item.image} alt="" className="h-80 object-cover" />
-              <div className="bg-orange-300">
+              <div className="relative h-80">
+                <Image
+                  src={storageUrl + item.image}
+                  alt={item.name}
+                  className=" object-cover"
+                  fill
+                />
+              </div>
+              <div className="">
                 <div className="text-xl font-semibold text-center">
-                  {item.heading}
-                </div>
-                <div className="text-sm font-light text-center">
-                  {item.description}
+                  {item.name}
                 </div>
                 <div className="text-lg font-medium text-center">
                   {item.price}/-

@@ -1,9 +1,9 @@
 export const CountryCode = [
-  {
-    name: "Select-country",
-    dial_cade: "",
-    code: "",
-  },
+  // {
+  //   name: "Select-country",
+  //   dial_cade: "",
+  //   code: "",
+  // },
   {
     name: "Afghanistan",
     dial_code: "+93",

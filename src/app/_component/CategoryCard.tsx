@@ -1,19 +1,25 @@
+import { storageUrl } from "@/utils/baseUrl";
 import cn from "@/utils/tailwind";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
 import React from "react";
 
 type CProps = {
-    image:StaticImageData
+    image:string
     text:string
     className?:string
+    id:string
 }
-const CatagoryCard = (props:CProps) => {
+const CategoryCard = (props:CProps) => {
+  // console.log('-=-=-=-=-=-=-=-=-=-',props.image)
   return (
-    <div className={cn("relative h-[550px] ",props.className)}>
-      <Image src={props.image} alt="" className="object-cover" fill />
+    <Link href={"/shop/" + props.id}>
+    <div className={cn("relative h-[550px] w-[400px] ",props.className)}>
+      <Image src={storageUrl+props.image} alt="Men Image" className="object-cover" fill />
       <div className=" absolute bg-white p-3 px-5 bottom-3 left-3 font-bold">{props.text}</div>
     </div>
+    </Link>
   );
 };
 
-export default CatagoryCard;
+export default CategoryCard;

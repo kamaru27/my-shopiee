@@ -1,32 +1,39 @@
+import { storageUrl } from "@/utils/baseUrl";
 import Image, { StaticImageData } from "next/image";
 import Link from "next/link";
 import React from "react";
 
 type CProps = {
-  image?: StaticImageData;
-  text: string;
+  categoryList: any;
   className?: string;
 };
 
-const Card = (props: CProps) => {
+const Card = ({ categoryList, className }: CProps) => {
+  // console.log(categoryList);
   return (
-    <Link href={"/shop/" + props.text}>
-      <div className="relative flex justify-center items-center mt-10 ">
-        {props.image ? (
-          <Image
-            src={props.image}
-            alt="category image"
-            className="size-80 object-cover"
-          />
-        ) : (
-          <div className="bg-orange-400 size-80"></div>
-        )}
+    <>
+      {categoryList.map((item: any, index: any) => (
+        <Link href={"/shop/" + item._id} key={index}>
+          <div className="relative flex justify-center items-center mt-10 ">
+            {item.image ? (
+              <Image
+                src={storageUrl + item.image}
+                alt="category image"
+                width={1000}
+                height={1000}
+                className="size-80 object-cover"
+              />
+            ) : (
+              <div className="bg-orange-400 size-80"></div>
+            )}
 
-        <div className="absolute flex justify-center font-extrabold text-2xl text-white shadow-black shadow-inner">
-          {props.text}
-        </div>
-      </div>
-    </Link>
+            <div className="absolute flex justify-center font-extrabold text-2xl text-black shadow-black shadow-inner">
+              {item.name}
+            </div>
+          </div>
+        </Link>
+      ))}
+    </>
   );
 };
 
